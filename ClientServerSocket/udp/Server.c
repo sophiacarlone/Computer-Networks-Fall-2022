@@ -35,7 +35,7 @@ int main(){
     //bind socket to address
     int bonded = bind(client_list_socket, (struct sockaddr*) &address, sizeof(address));
 
-    while(ON){
+    while(ON){ //TODO: investigate this
         //read what is comming from the current socket's packet 
         int last = recvfrom(client_list_socket, recv_packet, BUFFER, MSG_WAITALL, (struct sockaddr*) &address, (socklen_t*) &address);
         printf("%s\n", recv_packet); 
